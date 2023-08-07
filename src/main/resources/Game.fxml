@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.Boolean?>
+<AnchorPane prefHeight="800" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leguar.guessingnumbers.game.Controller">
+    <stylesheets>
+        <URL value="@styles/style.css" />
+    </stylesheets>
+    <!--TitleBar-->
+    <GridPane fx:id="titleBar">
+        <Label styleClass="label" GridPane.columnIndex="0" />
+
+        <Button id="minButton" fx:id="minButton" onAction="#setMinButton" styleClass="button" text="-" GridPane.columnIndex="1" />
+
+        <Button id="closeButton" fx:id="closeButton" onAction="#setCloseButton" styleClass="button" text="X" GridPane.columnIndex="2" />
+    </GridPane>
+
+    <!--Background-->
+    <GridPane fx:id="backgroundPane" AnchorPane.topAnchor="35">
+        <Label styleClass="label" text="Zgadnij liczbę" GridPane.columnIndex="0" GridPane.rowIndex="0"
+               GridPane.halignment="CENTER" />
+    </GridPane>
+
+    <!--MenuBar-->
+    <GridPane fx:id="menuBar" AnchorPane.topAnchor="185">
+        <Label fx:id="textMenu" styleClass="label" text="Witaj w grze!" GridPane.columnIndex="0" GridPane.rowIndex="0"
+               GridPane.halignment="CENTER">
+            <wrapText>
+                <Boolean fx:value="true"/>
+            </wrapText>
+        </Label>
+
+        <Button fx:id="startGameButton" onAction="#setStartGameButton" styleClass="button" text="Graj" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                GridPane.halignment="CENTER" />
+
+        <Button fx:id="exitGameButton" onAction="#setExitGameButton" styleClass="button" text="Wyjdz" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                GridPane.halignment="CENTER" />
+    </GridPane>
+
+    <!--GameBar-->
+    <GridPane fx:id="gameBar" visible="false" AnchorPane.topAnchor="185" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100">
+        <Label styleClass="label" text="Pomyślałem o jakiejś liczbie. Zgadnij o jakiej" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                GridPane.halignment="CENTER">
+            <wrapText>
+                <Boolean fx:value="true"/>
+            </wrapText>
+        </Label>
+
+        <TextField fx:id="answerTextField" id="textField" promptText="Odpowiedź" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                GridPane.halignment="CENTER"/>
+
+        <Button fx:id="answerButton" onAction="#setAnswerButton" styleClass="button" text="Potwierdź" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                GridPane.halignment="CENTER"/>
+
+        <Button fx:id="surrenderButton" onAction="#setSurrenderButton" styleClass="button" text="Poddaje się" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                GridPane.halignment="CENTER"/>
+
+        <Label fx:id="textGame" styleClass="label" text="" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                GridPane.halignment="CENTER"/>
+    </GridPane>
+
+    <!--FooterBar-->
+    <GridPane fx:id="footerBar" AnchorPane.bottomAnchor="0">
+        <Label styleClass="label" text=".leguar"/>
+    </GridPane>
+</AnchorPane>
